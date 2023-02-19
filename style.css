@@ -1,22 +1,10 @@
 * {
-  margin: 0px;
+  margin: 0px 5px;
   padding: 0px;
   box-sizing: border-box;
 }
 * body {
   font-family: sans-serif;
-  font-size: 35px;
-}
-
-.container {
-  height: 100vh;
-  display: grid;
-  place-content: center;
-  background-color: navy;
-}
-
-.text {
-  color: aquamarine;
 }
 
 #size {
@@ -28,23 +16,107 @@
   color: #fff;
 }
 
-@media (max-width: 1200px) {
-  .container {
-    background-color: #1F110E;
-  }
+.container {
+  height: 100vh;
 }
-@media (max-width: 992px) {
-  .container {
-    background-color: #664735;
-  }
+
+.header {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-@media (max-width: 768px) {
-  .container {
-    background-color: #231D1E;
-  }
+.header__logo {
+  font-size: 4vw;
+  font-weight: 700;
 }
-@media (max-width: 576px) {
-  .container {
-    background-color: #564F19;
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5vw;
+  gap: 15px;
+  font-weight: 500;
+}
+
+.main {
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
+.main__image {
+  background-image: url(/images/andra-c-taylor-jr-Defp8o9qtJQ-unsplash.jpg);
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+.main__text {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main__text-1 {
+  font-size: 7vw;
+}
+.main__text-2, .main__text-3, .main__text-4 {
+  font-size: 3vw;
+}
+
+.footer {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 10%;
+  gap: 22px;
+}
+.footer [class^=footer__] img {
+  width: 5vw;
+}
+
+@media (max-width: 650px) {
+  .header {
+    justify-content: center;
+  }
+  .header__logo {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .header__menu {
+    display: none;
+  }
+  .main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main__image {
+    height: 220px;
+    width: 220px;
+    border-radius: 100%;
+    background-size: 100%;
+    background-position: center;
+  }
+  .main__text {
+    width: 100%;
+  }
+  .main__text-1 {
+    display: none;
+  }
+  .main__text-2, .main__text-3, .main__text-4 {
+    font-size: 25px;
+    font-weight: 200;
+  }
+  .footer {
+    justify-content: center;
+    margin: 0px;
+  }
+  .footer [class^=footer__] img {
+    height: 50px;
+    width: 50px;
   }
 }/*# sourceMappingURL=style.css.map */

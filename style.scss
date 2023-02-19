@@ -1,43 +1,12 @@
-//defined colors
-$color-1 : #564F19 ; //mobile
-$color-2 : #231D1E ; //tablet
-$color-3 : #664735 ; //laptop
-$color-4 : #1F110E ; //desktop
-
-//different screen break-point sizes (bootstrap5 standard)
-
-$mobile : 576px;
-$tablet : 768px;
-$laptop : 992px;
-$desktop : 1200px;
-
 *{
-  margin: 0px;
+  margin: 0px 5px;
   padding: 0px;
   box-sizing: border-box;
 
   body{
   font-family: sans-serif;
-  font-size: 35px;
   }
 }
-
-.container{
-  height: 100vh;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center; 
-
-  display: grid;
-  place-content: center;
-  background-color: navy;
-}
-
-
-.text{
-  color: aquamarine;
-}
-
 
 #size{
   position: absolute;
@@ -48,23 +17,135 @@ $desktop : 1200px;
   font-size: 35px;
   color: #fff;
 }
-@media(max-width: $desktop){
-  .container{
-    background-color: $color-4;
+
+.container{
+  height: 100vh;
+}
+
+
+.header{
+  height: 10%;
+  // border: 1px red solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+
+  &__logo{
+    font-size: 4vw;
+    font-weight: 700;
+  }
+
+  &__menu{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vw;
+    gap: 15px;
+    font-weight: 500;
   }
 }
-@media(max-width: $laptop){
-  .container{
-    background-color: $color-3;
+
+.main{
+  height: 80%;
+  // border: 2px green solid;
+  display: flex;
+  flex-direction: row;
+
+  &__image{
+    background-image: url(/images/andra-c-taylor-jr-Defp8o9qtJQ-unsplash.jpg);
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+
+    // border: red 2px solid;
+  }
+
+  &__text{
+    width: 50%;
+    // border: black 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &-1{
+      font-size: 7vw;
+    }
+    &-2,&-3,&-4{
+      font-size: 3vw;
+    }
   }
 }
-@media(max-width: $tablet){
-  .container{
-    background-color: $color-2;
+
+
+.footer{
+  height: 10%;
+  // border: 2px blue solid;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 10%;
+  gap: 22px;
+
+  [class ^="footer__"]{
+    img{
+      width: 5vw;
+    }
   }
 }
-@media(max-width: $mobile){
-  .container{
-    background-color: $color-1;
+
+@media (max-width : 650px){
+  .header{
+    justify-content: center;
+
+
+    &__logo{
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    &__menu{
+      display: none;
+    }
+  }
+
+  .main{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__image{
+      height: 220px;
+      width: 220px;
+      border-radius: 100%;
+      background-size: 100%;
+      background-position: center;
+    }
+
+    &__text{
+      width: 100%;
+      &-1{
+        display: none;
+      }
+      &-2,&-3,&-4{
+        font-size: 25px;
+        font-weight: 200;
+      }
+    }
+  }
+
+  .footer{
+    justify-content: center;
+    margin: 0px;
+
+    [class ^="footer__"]{
+      img{
+        height: 50px;
+        width: 50px;
+      }
+    }
   }
 }
